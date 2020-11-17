@@ -1,0 +1,25 @@
+﻿@using QLLaptop.Models
+@model List<GH>
+
+@{
+    ViewBag.Title = "Xacnhandonhang";
+    Layout = "~/Views/Shared/GH_View.cshtml";
+}
+<h2>Đơn hàng của quý khách đã được chúng tôi ghi nhận.Chúng tôi sẽ liên hệ quý khách trong thời gian sớm nhất và giao hàng đúng hẹn</h2>
+<h2>Ban vui lòng thanh toán tại đây:</h2>
+<table align="center">
+    @using (Html.BeginForm("Order","GioHang"))
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td style="color:blue"><b><a href="https://www.baokim.vn/payment/product/version11?business=dominhtri1996ntl@gmail.com&id=&order_description=Welcome+%21&product_name=Mua_Hang_Tai_Yulyltn&product_price=@ViewBag.Tongtien&product_quantity=@ViewBag.Tongsoluong&total_amount=@ViewBag.Tongtien&url_cancel=http%3A%2F%2FYulyntl.net&url_detail=http%3A%2F%2FYulyntl.net&url_success=http%3A%2F%2FYulyntl.net"><img src="http://www.baokim.vn/developers/uploads/baokim_btn/thanhtoan-l.png" alt="Thanh toán an toàn với Bảo Kim !" border="0" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn"></a></b></td>
+        </tr>
+           }
+</table>
+        @using (Html.BeginForm("Index", "MyWeb"))
+{
+            <center>
+                <b><input style="color:blue" type="submit" value="Home" /></b>
+            </center>
+
+}

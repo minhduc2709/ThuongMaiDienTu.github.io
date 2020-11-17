@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Table_SP";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<h2 style="color:red">Product Management</h2>
+<center>
+    <table style="margin-bottom: 10px; ">
+        <tr style="text-align:center;font-weight:bold">
+            <td style="color:blue" align="center">
+                <input onclick="window.location.href = '@Url.Action("ThemmoiSP", "Admin")'" name="submit" type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</center>
+<table align="center" border="1">
+    <tr style="text-align:center;font-weight:bold;color:blueviolet;background-color:lightblue">
+        <td width="150px">Mã Laptop</td>
+        <td width="150px">Tên Laptop</td>
+        <td width="150px">Ảnh</td>
+        <td width="150px">Số lượng</td>
+        <td width="150px">Đơn giá</td>
+        <td width="150px"></td>
+        <td width="150px"></td>
+        <td width="150px"></td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr style="text-align:center;font-weight:bold">
+            <td>@item.MaLT</td>
+            <td>@item.TenLT</td>
+            <td><img style="height:100px" src="/123/Hinh/@item.Anhbia" /></td>
+            <td>@item.Soluongton</td>
+            <td>@string.Format("{0:0,0}", item.Giaban) VND</td>
+            @using (Html.BeginForm("Details", "Admin", new { id = item.MaLT }))
+            {
+                <td style="color:blue"><input type="submit" value="Details" /></td>
+            }
+            <td style="color:blue" align="center">
+                <input onclick="window.location.href = '@Url.Action("SuaSP", "Admin", new { id = item.MaLT })'" name="submit" type="submit" value="Edit" />
+            </td>
+            <td style="color:blue" align="center">
+            <input onclick="window.location.href = '@Url.Action("Delete", "Admin", new { id = item.MaLT })'" name="submit" type="submit" value="Delete" />
+            </td>
+        </tr>
+    }
+</table>

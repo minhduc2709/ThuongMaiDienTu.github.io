@@ -1,0 +1,82 @@
+﻿@model QLLaptop.Models.SANPHAM
+@{
+    ViewBag.Title = "thêm mới sản phẩm";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<style>
+    tr {
+        border: 1px solid #837777;
+    }
+
+    td {
+        background-color: #EEEEEE;
+        border: 1px solid;
+        text-align: center;
+        color: black;
+    }
+
+    a {
+        text-align: center;
+    }
+</style>
+
+<h2 style="text-align:center;color:black">THÊM MỚI SẢN PHẨM</h2>
+<h2>@ViewBag.Thongbao</h2>
+<center>
+    <table style="border:1px solid #dddddd" width="800px">
+
+
+        @using (Html.BeginForm("ThemmoiSP", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+            @Html.AntiForgeryToken()
+            <tr style="height:50px">
+                <td>Tên Sản Phẩm</td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.TenSP, new { @cols = "90", @style = "width: 94%;" })
+                    @Html.ValidationMessageFor(model => model.TenSP)
+                </td>
+            </tr>
+
+
+                <tr style="height:50px">
+                    <td>Hình ảnh</td>
+                    <td><input type="file" name="nhinhanh" value="" /></td>
+
+                </tr>
+
+                <tr style="height:50px">
+                    <td>Ma TH</td>
+                    <td>
+                        @Html.DropDownListFor(model => model.MaTH, null, new { @cols = "90" })
+                        @Html.ValidationMessageFor(model => model.MaTH)
+                    </td>
+                </tr>
+
+                <tr style="height:150px">
+                    <td>Mô tả</td>
+                    <td class="mau">
+                        @Html.TextAreaFor(model => model.Mota, new { @cols = "90", @rows = "6" })
+                        @Html.ValidationMessageFor(model => model.Mota)
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td>Giá Bán</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Giaban, new { @cols = "91", @rows = "6" })
+                        @Html.ValidationMessageFor(model => model.Giaban)
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td>Số lượng tồn</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Soluongton, new { @cols = "91" })
+                        @Html.ValidationMessageFor(model => model.Giaban)
+                    </td>
+                </tr>
+                <tr><td colspan="2"><input type="submit" value="Đồng Ý Thêm" /></td></tr>
+        }
+
+    </table>
+</center>

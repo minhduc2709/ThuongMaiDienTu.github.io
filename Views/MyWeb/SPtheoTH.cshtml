@@ -1,0 +1,64 @@
+﻿@using QLLaptop.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index_user.cshtml";
+}
+
+<h2></h2>
+
+<center>
+    <div id="Leephantrang" style="margin-top: -20px">
+        @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount*@
+        <div class="MenuTrang">
+            @Html.PagedListPager(Model, page => Url.Action("SPtheoTH", new { page = page }))
+        </div>
+        <style>
+            .MenuTrang li {
+                display: inline;
+            }
+        </style>
+    </div>
+</center>
+@Html.Action("THSP", "MyWeb")
+@foreach(var item in Model)
+{
+    <div class="col-md-3 top_brand_left">
+        <div class="hover14 column">
+            <div class="agile_top_brand_left_grid">
+                <!--<div class="tag"><img src="/123/images/tag.png" alt=" " class="img-responsive" /></div>-->
+                <div class="agile_top_brand_left_grid1">
+                    <figure>
+                        <div class="snipcart-item block">
+                            <div class="snipcart-thumb">
+                                <a href="@Url.Action("CTSP", "MyWeb", new {id=item.MaSP})"><img style="height:200px" title=" " alt=" " src="/123/Hinh/@item.Anhbia" /></a>
+                                <p>@item.TenSP</p>
+                                <p>Cost</p>
+                                <h4>@string.Format("{0:0,0}",item.Giaban) VND</h4>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details">
+                                <form action="@Url.Action("CTSP", "MyWeb", new {id=item.MaSP})" method="post">
+                                    <fieldset>
+                                        @*<input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="business" value=" " />
+                                        <input type="hidden" name="item_name" value="@item.TenLT" />
+                                        <input type="hidden" name="amount" value="@item.Giaban" />
+                                        <input type="hidden" name="discount_amount" value="" />
+                                        <input type="hidden" name="currency_code" value="USD" />
+                                        <input type="hidden" name="return" value=" " />
+                                        <input type="hidden" name="cancel_return" value=" " />*@
+                                        <input type="submit" name="submit" value="Show details" class="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+}

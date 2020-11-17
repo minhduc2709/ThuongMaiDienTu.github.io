@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Table_KH";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<h2 style="color:red">Customer Management</h2>
+<table align="center" border="1">
+    <tr style="text-align:center;font-weight:bold;color:blueviolet;background-color:lightblue">
+        <td width="150px">Mã KH</td>
+        <td width="150px">Họ tên</td>
+        <td width="150px">Tài khoản</td>
+        <td width="150px">Mật khẩu</td>
+        <td width="150px">Email</td>
+        <td width="150px">Địa chỉ</td>
+        <td width="150px">Điện thoại</td>
+        <td width="150px"></td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr style="text-align:center;font-weight:bold">
+            <td>@item.MaKH</td>
+            <td>@item.HoTen</td>
+            <td>@item.Taikhoan</td>
+            <td>@item.Matkhau</td>
+            <td>@item.Email</td>
+            <td>@item.DiachiKH</td>
+            <td>@item.DienthoaiKH</td>
+            <td style="color:blue" align="center">
+                <input onclick="window.location.href = '@Url.Action("XoaKH", "Admin", new { id = item.MaKH })'" name="submit" type="submit" value="Delete" />
+            </td>
+        </tr>
+    }
+</table>

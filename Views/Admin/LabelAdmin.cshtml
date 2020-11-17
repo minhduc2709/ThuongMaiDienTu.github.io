@@ -1,0 +1,19 @@
+﻿@using QLLaptop.Models;
+@{
+    ADMIN ad = (ADMIN)Session["TaiKhoanAdmin"];
+}
+@*@if (ad == null)
+{
+    <li><a href="@Url.Action("Login","Sign")">Login</a></li>
+    <li><a href="@Url.Action("SignUp","Sign")">Sign Up</a></li>
+}
+else
+{
+    <li><a href="@Url.Action("Index","MyWeb")">Welcome!@kh.Taikhoan</a></li>
+    <li><h5 style="color:red;text-align:center">Welcome!@kh.Taikhoan</h5></li>*@
+    <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>Hi ! @ad.UserAdmin</a></li>
+    @*<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>*@
+    <li><a href="@Url.Action("Logout","Admin")"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg>Logout</a></li>
+    @*<li><h5 style="color: red; text-align: center; text-transform: uppercase; ">Hi ! @ad.UserAdmin</h5></li>
+    <li><a href="@Url.Action("Logout","Admin")">Logout</a></li>*@
+@*}*@

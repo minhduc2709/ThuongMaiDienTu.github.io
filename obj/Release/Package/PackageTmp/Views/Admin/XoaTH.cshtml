@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "XoaTH";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<h2>Thong tin khach hang</h2>
+<table align="center" border="1">
+    <tr style="text-align:center;font-weight:bold;color:blueviolet;background-color:lightblue">
+        <td width="150px">Mã TH</td>
+        <td width="150px">Tên TH</td>
+    </tr>
+    <tr style="text-align:center;font-weight:bold">
+        <td>@Model.MaTH</td>
+        <td>@Model.TenTH</td>
+    </tr>
+</table>
+<center>
+    <table>
+        <tr style="text-align:center;font-weight:bold">
+            @using (Html.BeginForm("XoaTH", "Admin"))
+            {
+                <td style="color:blue"><input type="submit" value="Delete" /></td>
+            }
+            @using (Html.BeginForm("Table_TH", "Admin"))
+            {
+                <td style="color:blue"><input type="submit" value="Trở về" /></td>
+            }
+        </tr>
+    </table>
+</center>

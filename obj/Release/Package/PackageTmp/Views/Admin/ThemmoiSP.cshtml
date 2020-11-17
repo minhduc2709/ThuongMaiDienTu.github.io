@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "ThemmoiSP";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<style>
+    tr {
+        border: 1px solid #837777;
+    }
+
+    td {
+        background-color: #EEEEEE;
+        border: 1px solid;
+        text-align: center;
+        color: black;
+    }
+
+    a {
+        text-align: center;
+    }
+</style>
+
+<h2 style="text-align:center;color:black">THÊM SẢN PHẨM</h2>
+<h2>@ViewBag.Thongbao</h2>
+<center>
+    <table style="border:1px solid #dddddd" width="800px">
+
+
+        @using (Html.BeginForm("ThemmoiSP", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <tr style="height:50px">
+                <td>Tên Sản Phẩm</td>
+                <td><input type="text" size="91" name="ntensp" value="" /></td>
+            </tr>
+
+
+            <tr style="height:50px">
+                <td>Hình ảnh</td>
+                <td><input type="file" name="nhinhanh" value="" /></td>
+
+            </tr>
+
+            <tr style="height:50px">
+                <td>Ma TH</td>
+                <td><input type="text" size="91" name="nthuonghieu" value="" /></td>
+
+                @*<td>
+                    <select name="nthuonghieu">
+                        @Html.Action("cbthuonghieu", "AdminSite")
+                    </select>
+                </td>*@
+            </tr>
+
+            <tr style="height:150px">
+                <td>Mô tả</td>
+                @*<td><input type="text" name="nmota" value="@Model.Mota" /></td>*@
+                <td class="mau"><textarea name="nmota" cols="90" rows="6"></textarea></td>
+            </tr>
+            <tr style="height:50px">
+                <td>Giá Bán</td>
+                <td><input type="text" size="91" name="ngiaban" value="" /></td>
+            </tr>
+            <tr style="height:50px">
+                <td>Số lượng tồn</td>
+                <td><input type="text" size="91" name="nsoluongton" value="" /></td>
+            </tr>
+
+
+            <tr><td colspan="2"><input type="submit" value="Đồng Ý Thêm" /></td></tr>
+
+
+        }
+
+    </table>
+</center>

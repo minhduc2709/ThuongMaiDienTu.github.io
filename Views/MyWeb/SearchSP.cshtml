@@ -1,0 +1,122 @@
+﻿@using QLLaptop.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+
+
+@{
+    ViewBag.Title = "Tìm kiếm sản phẩm";
+    Layout = "~/Views/Shared/index_user.cshtml";
+    var key = HttpContext.Current.Request.QueryString["keywords"];
+}
+
+
+<center>
+    <div id="Leephantrang" style="margin-top: -20px">
+        @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount*@
+        <div class="MenuTrang">
+            @Html.PagedListPager(Model, page => Url.Action("SearchSP", new { keywords = key , page = page }))
+        </div>
+        <style>
+            .MenuTrang li {
+                display: inline;
+            }
+        </style>
+    </div>
+</center>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Giaban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anhbia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soluongton)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Giaban)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anhbia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluongton)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+<div id="sp">
+@if(Model.Count < 1)
+    {
+    <h1>không thấy kết quả nào! </h1>
+    }else{
+    foreach (var item in Model)
+    {
+        <div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="agile_top_brand_left_grid">
+							<!--<div class="tag"><img src="/123/images/tag.png" alt=" " class="img-responsive" /></div>-->
+							<div class="agile_top_brand_left_grid1">
+								<figure>
+									<div class="snipcart-item block" >
+										<div class="snipcart-thumb">
+                                            <a href="@Url.Action("CTSP", "MyWeb", new {id=item.MaSP})"><img style="height:200px" title=" " alt=" " src="/123/Hinh/@item.Anhbia" /></a>		
+											<p>@item.TenSP</p>
+                                            <p>Cost</p>
+											<h4>@string.Format("{0:0,0}",item.Giaban) VND</h4>
+										</div>
+										<div class="snipcart-details top_brand_home_details">
+                                            <form action="@Url.Action("CTSP", "MyWeb", new {id=item.MaSP})" method="post">
+                                                <fieldset>
+                                                    @*<input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="business" value=" " />
+                                                    <input type="hidden" name="item_name" value="@item.TenSP" />
+                                                    <input type="hidden" name="amount" value="@item.Giaban" />
+                                                    <input type="hidden" name="discount_amount" value="" />
+                                                    <input type="hidden" name="currency_code" value="VND" />
+                                                    <input type="hidden" name="return" value=" " />
+                                                    <input type="hidden" name="cancel_return" value=" " />*@
+                                                    <input type="submit" name="submit" value="Show details" class="button" />
+                                                </fieldset>
+                                            </form>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+    }
+
+}
+</div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "XoaKH";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<h2>Thong tin khach hang</h2>
+<table align="center" border="1">
+    <tr style="text-align:center;font-weight:bold;color:blueviolet;background-color:lightblue">
+        <td width="150px">Mã KH</td>
+        <td width="150px">Họ tên</td>
+        <td width="150px">Tài khoản</td>
+        <td width="150px">Mật khẩu</td>
+        <td width="150px">Email</td>
+        <td width="150px">Địa chỉ</td>
+        <td width="150px">Điện thoại</td>
+    </tr>
+    <tr style="text-align:center;font-weight:bold">
+        <td>@Model.MaKH</td>
+        <td>@Model.HoTen</td>
+        <td>@Model.Taikhoan</td>
+        <td>@Model.Matkhau</td>
+        <td>@Model.Email</td>
+        <td>@Model.DiachiKH</td>
+        <td>@Model.DienthoaiKH</td>
+    </tr>
+</table>
+<center>
+    <table>
+        <tr style="text-align:center;font-weight:bold">
+            @using (Html.BeginForm("XoaKH", "Admin"))
+            {
+                <td style="color:blue"><input type="submit" value="Delete" /></td>
+            }
+            @using (Html.BeginForm("Table_KH", "Admin"))
+            {
+                <td style="color:blue"><input type="submit" value="Trở về" /></td>
+            }
+        </tr>
+    </table>
+</center>

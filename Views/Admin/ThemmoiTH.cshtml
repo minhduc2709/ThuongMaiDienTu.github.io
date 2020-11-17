@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "ThemmoiTH";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<style>
+    tr {
+        border: 1px solid #837777;
+    }
+
+    td {
+        background-color: #EEEEEE;
+        border: 1px solid;
+        text-align: center;
+        color: black;
+    }
+
+    a {
+        text-align: center;
+    }
+</style>
+
+<h2 style="text-align:center;color:black">THÊM SẢN PHẨM</h2>
+<h2 style="text-align:center;color:red">@ViewBag.Thongbao</h2>
+<center>
+    <table style="border:1px solid #dddddd" width="600px">
+
+
+        @using (Html.BeginForm("ThemmoiTH", "Admin"))
+        {
+
+            <tr style="height:50px">
+                <td>Tên Thương Hiệu</td>
+                <td><input type="text" size="91" name="ntensp" value="" /></td>
+            </tr>
+
+            @*<tr style="height:50px">
+                
+
+                <td>
+                    <input type="text" size="91" name="nthuonghieu" value="" />
+                </td>
+            </tr>*@
+
+            <tr><td colspan="2"><input type="submit" value="Đồng Ý Thêm" /></td></tr>
+
+
+        }
+
+    </table>
+</center>

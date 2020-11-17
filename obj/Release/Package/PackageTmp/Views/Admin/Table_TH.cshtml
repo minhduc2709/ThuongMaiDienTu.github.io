@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Table_TH";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<h2 style="color:red">Brand Management</h2>
+<center>
+    <table style="margin-bottom: 10px; ">
+        <tr style="text-align:center;font-weight:bold">
+            <td style="color:blue" align="center">
+                <input onclick="window.location.href = '@Url.Action("ThemmoiTH", "Admin")'" name="submit" type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</center>
+<table align="center" border="1">
+    <tr style="text-align:center;font-weight:bold;color:blueviolet;background-color:lightblue">
+        <td width="150px">Mã TH</td>
+        <td width="150px">Tên TH</td>
+        <td width="150px"></td>
+        <td width="150px"></td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr style="text-align:center;font-weight:bold">
+            <td>@item.MaTH</td>
+            <td>@item.TenTH</td>
+            <td style="color:blue" align="center">
+                <input onclick="window.location.href = '@Url.Action("SuaTH", "Admin", new { id = item.MaTH })'" name="submit" type="submit" value="Edit" />
+            </td>
+            <td style="color:blue" align="center">
+                <input onclick="window.location.href = '@Url.Action("XoaTH", "Admin", new { id = item.MaTH })'" name="submit" type="submit" value="Delete" />
+            </td>
+        </tr>
+    }
+</table>

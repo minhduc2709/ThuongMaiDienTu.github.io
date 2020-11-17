@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "SuaSP";
+    Layout = "~/Views/Shared/tables.cshtml";
+}
+
+<style>
+    tr {
+        border: 1px solid #837777;
+    }
+
+    td {
+        background-color: #EEEEEE;
+        border: 1px solid;
+        text-align: center;
+        color: black;
+    }
+
+    a {
+        text-align: center;
+    }
+</style>
+
+<h2 style="text-align:center;color:black">SỬA THÔNG TIN SẢN PHẨM</h2>
+<center>
+
+
+    @*@using (Html.BeginForm("SuaHinh", "AdminSite", new { masp = @Model.Mado }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {*@
+    @*@*<button style="float:left" type="submit">Đồng Ý</button>*@
+    @*<input style="float:left" type="file" name="nhinh" value="" />*@
+    @*<form  class="btn btn-danger active" style="text-align:center;float:left">
+            <h3 style="color:blue;font-size:20px;font-weight:200;float:left">CHỈNH SỬA HÌNH</h3>
+              <h4 style="color:blue;float:left">~~Nhấp Chọn Hình~~</h4><input style="float:left" type="file" name="nhinh" value="CHọn Hình">
+            <br />
+            <h4 style="color:blue;float:left">~~Đồng Ý Update~~</h4><button type="submit">Đồng Ý</button>
+        </form>
+
+        <br />
+        <br />*@
+
+
+    @*<table style="border:1px solid #777777;border-radius:20px" width="800px">
+
+                 <tr style="height:50px">
+                     <td>Chọn Hình</td>
+                     <td><input style="float:left" type="file" name="nhinh" value=""></td>
+
+                 </tr>
+             <tr>
+                 <td>Đồng ý Update</td>
+                 <td><button type="submit">Đồng Ý</button></td>
+             </tr>
+
+             </table>
+
+
+
+
+
+
+        }*@
+
+    <table style="border:1px solid #777777;border-radius:20px" width="800px">
+        
+        
+
+
+        @using (Html.BeginForm("SuaSP", "Admin", new { id = @Model.MaLT }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+
+            <tr style="height:50px">
+                <td>Tên Sản Phẩm</td>
+                <td><input class="form-control" style="text-align:center;color:black" type="text" size="70" name="ntensp" value="@Model.TenLT" /></td>
+            </tr>
+
+            @*<tr style="height:50px">
+                    <td>Hình ảnh</td>
+                    <td><img width="20%" src="/Assets/mayanh/@Model.Anhbia" /></td>
+
+                </tr>*@
+
+            <tr style="height:50px">
+                <td>Hình ảnh</td>
+                <td><img width="20%" src="/123/Hinh/@Model.Anhbia" /><br /><span style="color:blue;float:left">UPLOAD HÌNH~</span><input style="float:left" type="file" name="nhinh" value=""></td>
+
+            </tr>
+            <tr style="height:50px">
+                <td>Tên Thương Hiệu</td>
+
+                @*<td>
+                    <select style="border-radius:10px;width:200px" name="nthuonghieu">
+                        @Html.Action("cbthuonghieu", "Admin")
+                    </select>
+                </td>*@
+                <td><input type="text" size="91" name="nthuonghieu" value="@Model.MaTH" /></td>
+            </tr>
+            <tr style="height:150px">
+                <td>Mô tả</td>
+
+                <td class="mau"><textarea style="border-radius:20px" name="nmota" cols="90" rows="6">@Model.Mota</textarea></td>
+            </tr>
+            <tr style="height:50px">
+                <td>Giá Bán</td>
+                <td><input class="form-control" style="text-align: center; color: black " type="text" size="91" name="ngiaban" value="@Model.Giaban" /></td>
+            </tr>
+            <tr style="height:50px">
+                <td>Số lượng tồn</td>
+                <td><input class="form-control" style="text-align:center;color:black" type="text" size="91" name="nsoluongton" value="@Model.Soluongton" /></td>
+            </tr>
+
+
+            <tr><td colspan="2"><input style="width:200px;height:40px;font-size:20px;color:white;background-color:#007aff" type="submit" value="Update Thông Tin" /></td></tr>
+
+
+        }
+
+    </table>
+    <a class="btn btn-primary btn-lg" href="@Url.Action("Table_SP","Admin")" style="text-decoration:none" title="Bootstrap 3 themes generator">Trở Về </a>
+
+</center>
+
+

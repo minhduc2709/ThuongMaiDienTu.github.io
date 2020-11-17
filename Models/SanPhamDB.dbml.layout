@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SanPhamDB">
+  <DataContextMoniker Name="/SanPhamDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f9e01124-0b40-456a-b038-f97a860ee3ef" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SanPhamDBDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="132c305e-b9a4-405d-abbb-533c583c68ab" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4e919f4-f4ff-4aac-a1d2-dae185d55bc2" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SanPhamDBDataContext/THUONGHIEU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9734c047-2f93-40d9-b4db-8696662fa6ba" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c60bb446-880d-4ce3-89a2-5b3168f9323e" absoluteBounds="0.75, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SanPhamDBDataContext/CHITIETDONHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39db6d3f-171c-41aa-98d5-4566cdd4a45a" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbe7523f-a437-4a69-8ccd-289d5db21a3d" absoluteBounds="3.75, 2.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SanPhamDBDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2abfe121-5e47-40f5-a100-2cd7c1e90f4e" absoluteBounds="3.765, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3120d152-26e5-462d-801a-1bfcf4962847" absoluteBounds="3.75, 5.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SanPhamDBDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45f5db28-9f6f-41a0-96f7-1f3f08366d0c" absoluteBounds="3.765, 6.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea2320ee-3c6b-4047-a7f0-3416bab7a0dd" absoluteBounds="6.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SanPhamDBDataContext/SANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9139422-6040-4775-9cbc-cd552bc96bc9" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
